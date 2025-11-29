@@ -176,6 +176,16 @@ public class ProductService {
                 product.getImageUrls() != null && !product.getImageUrls().isEmpty() ? product.getImageUrls().get(0)
                         : null);
         dto.setRating(product.getAverageRating());
+
+        dto.setCategory(product.getCategoryId()); // Using ID for now, ideally should be name
+        dto.setBrand(product.getBrand());
+        dto.setStockLevel(product.getStockLevel());
+        dto.setDescription(product.getDescription());
+
+        dto.setSalePrice(product.getSalePrice());
+        dto.setDiscountPercentage(product.getDiscountPercentage());
+        dto.setSaleEndDate(product.getSaleEndDate());
+
         return dto;
     }
 

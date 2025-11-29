@@ -10,4 +10,14 @@ public class ProductListDTO {
     private BigDecimal price;
     private String imageUrl;
     private Double rating;
+
+    private String category;
+    private String brand;
+    private Integer stockLevel;
+    private String description;
+
+    // Deal fields
+    private BigDecimal salePrice;
+    private Double discountPercentage;
+    private java.time.LocalDateTime saleEndDate;
 }
