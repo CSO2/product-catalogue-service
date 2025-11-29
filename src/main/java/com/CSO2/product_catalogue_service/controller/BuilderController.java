@@ -1,7 +1,7 @@
 package com.CSO2.product_catalogue_service.controller;
 
-import com.CSO2.product_catalogue_service.dto.BuilderSuggestionDTO;
-import com.CSO2.product_catalogue_service.dto.CompatibilityCheckRequest;
+import com.CSO2.product_catalogue_service.dto.response.BuilderSuggestionDTO;
+import com.CSO2.product_catalogue_service.dto.request.CompatibilityCheckRequest;
 import com.CSO2.product_catalogue_service.service.BuilderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

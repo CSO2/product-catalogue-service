@@ -1,11 +1,11 @@
 package com.CSO2.product_catalogue_service.controller;
 
-import com.CSO2.product_catalogue_service.dto.FilterParams;
-import com.CSO2.product_catalogue_service.dto.ProductCreateRequest;
-import com.CSO2.product_catalogue_service.dto.ProductDetailDTO;
-import com.CSO2.product_catalogue_service.dto.ProductListDTO;
+import com.CSO2.product_catalogue_service.dto.request.FilterParams;
+import com.CSO2.product_catalogue_service.dto.request.ProductCreateRequest;
+import com.CSO2.product_catalogue_service.dto.response.ProductDetailDTO;
+import com.CSO2.product_catalogue_service.dto.response.ProductListDTO;
 import com.CSO2.product_catalogue_service.model.Product;
-import com.CSO2.product_catalogue_service.dto.StockCheckItem;
+import com.CSO2.product_catalogue_service.dto.request.StockCheckItem;
 import com.CSO2.product_catalogue_service.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

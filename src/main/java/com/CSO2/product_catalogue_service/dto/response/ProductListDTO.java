@@ -1,4 +1,4 @@
-package com.CSO2.product_catalogue_service.dto;
+package com.CSO2.product_catalogue_service.dto.response;
 
 import lombok.Data;
 import java.math.BigDecimal;

@@ -1,6 +1,6 @@
 package com.CSO2.product_catalogue_service.controller;
 
-import com.CSO2.product_catalogue_service.dto.ReviewSubmitRequest;
+import com.CSO2.product_catalogue_service.dto.request.ReviewSubmitRequest;
 import com.CSO2.product_catalogue_service.model.Review;
 import com.CSO2.product_catalogue_service.repository.ReviewRepository;
 import com.CSO2.product_catalogue_service.service.ReviewService;
