@@ -17,4 +17,7 @@ public class Category {
     private String slug;
 
     private String parentId;
+
+    private String description;
+    private String iconName; // For frontend to map to icons
 }
