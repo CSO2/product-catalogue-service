@@ -62,6 +62,11 @@ public class ProductController {
         return productService.getLowStockProducts(threshold);
     }
 
+    @GetMapping("/deals")
+    public List<Product> getDeals() {
+        return productService.getDeals();
+    }
+
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody ProductCreateRequest request) {
         return ResponseEntity.ok(productService.createProduct(request));

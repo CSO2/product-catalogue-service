@@ -34,6 +34,10 @@ public class ProductService {
         return productRepository.findByStockLevelLessThan(threshold);
     }
 
+    public List<Product> getDeals() {
+        return productRepository.findByDiscountPercentageGreaterThan(0.0);
+    }
+
     public Page<ProductListDTO> getProducts(FilterParams params, Pageable pageable) {
         Query query = new Query().with(pageable);
 

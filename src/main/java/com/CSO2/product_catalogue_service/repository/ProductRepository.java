@@ -21,4 +21,6 @@ public interface ProductRepository extends MongoRepository<Product, String> {
             Pageable pageable);
 
     List<Product> findByStockLevelLessThan(int stockLevel);
+
+    List<Product> findByDiscountPercentageGreaterThan(double discountPercentage);
 }

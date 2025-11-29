@@ -30,4 +30,9 @@ public class Product {
     private Integer reviewCount;
     private Boolean isActive;
     private Boolean featured;
+
+    // Deal/Promotion Fields
+    private BigDecimal salePrice;
+    private Double discountPercentage;
+    private java.time.LocalDateTime saleEndDate;
 }
