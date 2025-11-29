@@ -1,6 +1,7 @@
 package com.CSO2.product_catalogue_service.service;
 
-import com.CSO2.product_catalogue_service.dto.*;
+import com.CSO2.product_catalogue_service.dto.request.*;
+import com.CSO2.product_catalogue_service.dto.response.*;
 import com.CSO2.product_catalogue_service.model.Product;
 import com.CSO2.product_catalogue_service.model.Review;
 import com.CSO2.product_catalogue_service.repository.ProductRepository;

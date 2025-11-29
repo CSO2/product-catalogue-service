@@ -1,6 +1,6 @@
 package com.CSO2.product_catalogue_service.service;
 
-import com.CSO2.product_catalogue_service.dto.BuilderSuggestionDTO;
+import com.CSO2.product_catalogue_service.dto.response.BuilderSuggestionDTO;
 import com.CSO2.product_catalogue_service.model.Product;
 import com.CSO2.product_catalogue_service.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
