@@ -24,6 +24,7 @@ public class Product {
     private Integer stockLevel;
     private String brand;
     private String categoryId;
+    private String subcategory;
     private List<String> imageUrls;
     private Map<String, String> attributes;
     private Double averageRating;

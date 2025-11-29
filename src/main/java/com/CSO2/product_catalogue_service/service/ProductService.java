@@ -157,6 +157,7 @@ public class ProductService {
         product.setStockLevel(request.getStockLevel());
         product.setBrand(request.getBrand());
         product.setCategoryId(request.getCategoryId());
+        product.setSubcategory(request.getSubcategory());
         product.setImageUrls(request.getImageUrls());
         product.setAttributes(request.getAttributes());
         product.setIsActive(true);
@@ -187,6 +188,7 @@ public class ProductService {
                     .orElse("Unknown");
         }
         dto.setCategory(categoryName);
+        dto.setSubcategory(product.getSubcategory());
         dto.setBrand(product.getBrand());
         dto.setStockLevel(product.getStockLevel());
         dto.setDescription(product.getDescription());
@@ -207,6 +209,7 @@ public class ProductService {
         dto.setStockLevel(product.getStockLevel());
         dto.setBrand(product.getBrand());
         dto.setCategoryId(product.getCategoryId());
+        dto.setSubcategory(product.getSubcategory());
         dto.setImageUrls(product.getImageUrls());
         dto.setAttributes(product.getAttributes());
         dto.setAverageRating(product.getAverageRating());
