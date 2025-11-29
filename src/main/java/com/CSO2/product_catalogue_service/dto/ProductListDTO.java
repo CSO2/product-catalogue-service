@@ -12,6 +12,7 @@ public class ProductListDTO {
     private Double rating;
 
     private String category;
+    private String subcategory;
     private String brand;
     private Integer stockLevel;
     private String description;
