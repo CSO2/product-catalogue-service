@@ -53,7 +53,62 @@ public class DataSeeder implements CommandLineRunner {
             attrs2.put("DPI", "16000");
             p2.setAttributes(attrs2);
 
-            productRepository.saveAll(Arrays.asList(p1, p2));
+            // Seed Components for PC Builder
+            Product cpu = new Product();
+            cpu.setName("Intel Core i9-13900K");
+            cpu.setSlug("intel-core-i9-13900k");
+            cpu.setDescription("24 cores (8 P-cores + 16 E-cores) and 32 threads.");
+            cpu.setPrice(new BigDecimal("589.99"));
+            cpu.setStockLevel(20);
+            cpu.setBrand("Intel");
+            cpu.setCategoryId("components"); // Assuming 'components' is the ID for Components category
+            cpu.setSubcategory("CPU");
+            cpu.setImageUrls(Arrays.asList("https://m.media-amazon.com/images/I/61S7A7iQ-0L._AC_SL1500_.jpg"));
+            cpu.setIsActive(true);
+            cpu.setAverageRating(4.8);
+            cpu.setReviewCount(150);
+            Map<String, String> cpuAttrs = new HashMap<>();
+            cpuAttrs.put("socketType", "LGA1700");
+            cpuAttrs.put("tdp", "125");
+            cpu.setAttributes(cpuAttrs);
+
+            Product mobo = new Product();
+            mobo.setName("ASUS ROG Maximus Z790 Hero");
+            mobo.setSlug("asus-rog-maximus-z790-hero");
+            mobo.setDescription("Intel Z790 ATX motherboard with 20+1 power stages.");
+            mobo.setPrice(new BigDecimal("629.99"));
+            mobo.setStockLevel(15);
+            mobo.setBrand("ASUS");
+            mobo.setCategoryId("components");
+            mobo.setSubcategory("Motherboard");
+            mobo.setImageUrls(Arrays.asList("https://m.media-amazon.com/images/I/81p-Yq9xYAL._AC_SL1500_.jpg"));
+            mobo.setIsActive(true);
+            mobo.setAverageRating(4.7);
+            mobo.setReviewCount(85);
+            Map<String, String> moboAttrs = new HashMap<>();
+            moboAttrs.put("socketType", "LGA1700");
+            moboAttrs.put("formFactor", "ATX");
+            moboAttrs.put("memoryType", "DDR5");
+            mobo.setAttributes(moboAttrs);
+
+            Product gpu = new Product();
+            gpu.setName("NVIDIA GeForce RTX 4090");
+            gpu.setSlug("nvidia-geforce-rtx-4090");
+            gpu.setDescription("The ultimate GeForce GPU.");
+            gpu.setPrice(new BigDecimal("1599.99"));
+            gpu.setStockLevel(5);
+            gpu.setBrand("NVIDIA");
+            gpu.setCategoryId("components");
+            gpu.setSubcategory("GPU");
+            gpu.setImageUrls(Arrays.asList("https://m.media-amazon.com/images/I/61Zt+8-XwLL._AC_SL1500_.jpg"));
+            gpu.setIsActive(true);
+            gpu.setAverageRating(4.9);
+            gpu.setReviewCount(200);
+            Map<String, String> gpuAttrs = new HashMap<>();
+            gpuAttrs.put("powerRequirement", "450");
+            gpu.setAttributes(gpuAttrs);
+
+            productRepository.saveAll(Arrays.asList(p1, p2, cpu, mobo, gpu));
             System.out.println("Product data seeded!");
         }
     }
