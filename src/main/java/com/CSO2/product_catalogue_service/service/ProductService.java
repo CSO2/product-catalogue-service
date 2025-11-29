@@ -5,6 +5,7 @@ import com.CSO2.product_catalogue_service.model.Product;
 import com.CSO2.product_catalogue_service.model.Review;
 import com.CSO2.product_catalogue_service.repository.ProductRepository;
 import com.CSO2.product_catalogue_service.repository.ReviewRepository;
+import com.CSO2.product_catalogue_service.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -24,6 +25,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
     private final ReviewRepository reviewRepository;
+    private final CategoryRepository categoryRepository;
     private final MongoTemplate mongoTemplate;
 
     public List<Product> getFeaturedProducts() {
@@ -177,7 +179,14 @@ public class ProductService {
                         : null);
         dto.setRating(product.getAverageRating());
 
-        dto.setCategory(product.getCategoryId()); // Using ID for now, ideally should be name
+        // Fetch category name
+        String categoryName = "Unknown";
+        if (product.getCategoryId() != null) {
+            categoryName = categoryRepository.findById(product.getCategoryId())
+                    .map(com.CSO2.product_catalogue_service.model.Category::getName)
+                    .orElse("Unknown");
+        }
+        dto.setCategory(categoryName);
         dto.setBrand(product.getBrand());
         dto.setStockLevel(product.getStockLevel());
         dto.setDescription(product.getDescription());
