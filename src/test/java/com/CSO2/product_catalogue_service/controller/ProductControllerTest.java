@@ -5,7 +5,8 @@ import com.CSO2.product_catalogue_service.dto.response.ProductDetailDTO;
 import com.CSO2.product_catalogue_service.dto.response.ProductListDTO;
 import com.CSO2.product_catalogue_service.model.Product;
 import com.CSO2.product_catalogue_service.service.ProductService;
-import tools.jackson.databind.ObjectMapper;
+// ✅ FIXED: Using the standard Jackson library
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -130,8 +131,8 @@ class ProductControllerTest {
         when(productService.createProduct(any(ProductCreateRequest.class))).thenReturn(product);
 
         mockMvc.perform(post("/api/products")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(request)))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value("1"))
                 .andExpect(jsonPath("$.name").value("New Product"));

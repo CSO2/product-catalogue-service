@@ -1,0 +1,29 @@
+# --- Product Catalogue Service ---
+spring:
+  application:
+    name: product-catalogue-service
+
+  # 1. Load Vault
+  config:
+    import: "optional:vault://"
+
+  # 2. Vault Config
+  cloud:
+    vault:
+      enabled: true
+      uri: http://localhost:8200
+      token: my-root-token
+      kv:
+        enabled: true
+        backend: kv
+        default-context: cs02-app
+      authentication: TOKEN
+
+  # 3. MongoDB Config (Using a unique key for this service)
+  data:
+    mongodb:
+      uri: ${product_mongodb_uri:mongodb://localhost:27017/CSO2_product_catalogue_service}
+
+# --- Server Port ---
+server:
+  port: 8082

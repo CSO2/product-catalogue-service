@@ -4,7 +4,7 @@ import com.CSO2.product_catalogue_service.dto.request.ReviewSubmitRequest;
 import com.CSO2.product_catalogue_service.model.Review;
 import com.CSO2.product_catalogue_service.repository.ReviewRepository;
 import com.CSO2.product_catalogue_service.service.ReviewService;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
