@@ -2,7 +2,7 @@ package com.CSO2.product_catalogue_service.controller;
 
 import com.CSO2.product_catalogue_service.model.Category;
 import com.CSO2.product_catalogue_service.service.CategoryService;
-import tools.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
